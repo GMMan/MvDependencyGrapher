@@ -8,7 +8,7 @@ namespace MvDependencyGrapher
     class MapNode
     {
         public long Id { get; set; }
-        public List<MapNode> TransfersToNodes { get; } = new List<MapNode>();
-        public List<MapNode> TransfersFromNodes { get; } = new List<MapNode>();
+        public HashSet<MapNode> TransfersToNodes { get; } = new HashSet<MapNode>();
+        public HashSet<MapNode> TransfersFromNodes { get; } = new HashSet<MapNode>();
     }
 }
