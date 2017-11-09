@@ -34,7 +34,7 @@ namespace MvDependencyGrapher
                 Environment.Exit(3);
             }
 
-            string projectDir = Path.GetDirectoryName(args[0]);
+            string projectDir = Path.GetDirectoryName(string.Join(" ", args));
             const string gvName = "dependency.gv";
             const string pngName = "dependency.png";
 
