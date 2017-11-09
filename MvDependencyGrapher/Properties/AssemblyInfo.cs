@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("MvDependencyGrapher")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("RPG Maker MV Dependency Grapher Tool")]
+[assembly: AssemblyDescription("Generates a map dependency graph for an RPG Maker MV project.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("MvDependencyGrapher")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("GMWare")]
+[assembly: AssemblyProduct("RPG Maker MV Dependency Grapher Tool")]
+[assembly: AssemblyCopyright("Copyright © cyanic 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
