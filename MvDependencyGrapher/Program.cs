@@ -27,7 +27,7 @@ namespace MvDependencyGrapher
             }
 
             // Check GraphViz
-            string dotPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().CodeBase), "gv", "dot.exe");
+            string dotPath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "gv", "dot.exe");
             if (!File.Exists(dotPath))
             {
                 Console.Error.WriteLine("Cannot find GraphViz dot. Make sure you've extracted the tool files properly.");
@@ -73,7 +73,7 @@ namespace MvDependencyGrapher
                             foreach (var cmd in page.List.Where(c => c.Code == 201))
                             {
                                 // Link nodes
-                                var targetNode = GetOrCreateNode(nodes, (cmd.Parameters[1] as Newtonsoft.Json.Linq.JToken).ToObject<long>());
+                                var targetNode = GetOrCreateNode(nodes, (long)cmd.Parameters[1]);
                                 targetNode.TransfersFromNodes.Add(node);
                                 node.TransfersToNodes.Add(targetNode);
                             }
@@ -130,7 +130,7 @@ namespace MvDependencyGrapher
                 {
                     FileName = dotPath,
                     Arguments = string.Format("-Tpng -o \"{0}\" \"{1}\"", Path.Combine(projectDir, pngName), Path.Combine(projectDir, gvName)),
-                    CreateNoWindow = false
+                    UseShellExecute = false
                 }).WaitForExit();
             }
             catch (Exception ex)
